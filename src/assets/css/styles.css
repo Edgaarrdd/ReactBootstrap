@@ -1,0 +1,47 @@
+.video-background {
+  min-height: 92vh; /* Asegura que la sección de video tenga una altura visible */
+  overflow: hidden; /* Oculta cualquier desbordamiento del video */
+  position: relative; /* Ya estaba presente, pero es bueno resaltarlo */
+  display: flex; /* Usa flexbox para centrar el contenido */
+  align-items: center; /* Centra el contenido verticalmente */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  background-color: #333; /* Color de fondo por defecto si el video no carga */
+}
+
+.video-background video {
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 50%; /* Centra el video verticalmente */
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centra el video */
+  z-index: 1; /* Coloca el video detrás del contenido superpuesto */
+}
+
+.video-overlay-content {
+  position: relative; /* <-- Necesario para que el z-index funcione */
+  z-index: 2; /* Asegura que el contenido esté sobre el video */
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro translúcido */
+  border-radius: 10px; /* Bordes redondeados */
+  min-width: 100%;
+  height: 92vh;
+}
+/* Estilo para los logos de empresas en el carrusel */
+.cliente-logo {
+  max-width: 100px; /* Ancho máximo para los logos */
+  object-fit: contain; /* Asegura que el logo completo sea visible sin recorte */
+  margin: 0 20px; /* Espaciado entre los logos */
+}
+
+/* Nueva clase para el contenedor interno que gestiona la alineación de los logos */
+.carousel-logos-wrapper {
+  display: flex; /* Usa flexbox para el diseño */
+  justify-content: space-around; /* Distribuye los logos con espacio alrededor */
+  align-items: center; /* Centra los logos verticalmente */
+  flex-wrap: wrap; /* Permite que los logos se ajusten en varias líneas en pantallas pequeñas */
+  padding: 20px 0; /* Añade relleno vertical */
+  width: 100%; /* Ocupa todo el ancho del elemento del carrusel */
+}
